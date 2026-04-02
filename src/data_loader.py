@@ -11,7 +11,7 @@ DEFAULT_PROCESSED_DIR = ROOT_DIR / "data" / "processed"
 
 
 class DataFileNotFoundError(FileNotFoundError):
-    """Raised when one or more expected processed CSV files are missing."""
+    pass
 
 
 def _validate_file(path: Path) -> None:
@@ -20,15 +20,6 @@ def _validate_file(path: Path) -> None:
 
 
 def load_split(split_name: str, processed_dir: Path | str = DEFAULT_PROCESSED_DIR) -> pd.DataFrame:
-    """Load one processed split by name.
-
-    Parameters
-    ----------
-    split_name:
-        One of: 'train', 'val', 'test'.
-    processed_dir:
-        Directory containing processed CSV files.
-    """
     processed_dir = Path(processed_dir)
     path = processed_dir / f"{split_name}.csv"
     _validate_file(path)
@@ -38,17 +29,16 @@ def load_split(split_name: str, processed_dir: Path | str = DEFAULT_PROCESSED_DI
 def load_processed_splits(
     processed_dir: Path | str = DEFAULT_PROCESSED_DIR,
 ) -> Tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
-    """Load train, validation, and test splits from disk."""
-    train_df = load_split("train", processed_dir)
-    val_df = load_split("val", processed_dir)
-    test_df = load_split("test", processed_dir)
-    return train_df, val_df, test_df
+    return (
+        load_split("train", processed_dir),
+        load_split("val", processed_dir),
+        load_split("test", processed_dir),
+    )
 
 
-def split_features_target(df: pd.DataFrame, target_col: str = "label") -> Tuple[pd.DataFrame, pd.Series]:
-    """Split a dataframe into features X and target y."""
+def split_features_target(df: pd.DataFrame, target_col: str = "label"):
     if target_col not in df.columns:
-        raise ValueError(f"Target column '{target_col}' not found in dataframe.")
+        raise ValueError(f"Target column '{target_col}' not found.")
 
     X = df.drop(columns=[target_col]).copy()
     y = df[target_col].copy()

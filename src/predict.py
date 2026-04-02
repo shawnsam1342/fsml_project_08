@@ -1,42 +1,29 @@
-from __future__ import annotations
 
-import sys
 from pathlib import Path
-from typing import Any
-
 import pandas as pd
-
-CURRENT_DIR = Path(__file__).resolve().parent
-ROOT_DIR = CURRENT_DIR.parent
-if str(ROOT_DIR) not in sys.path:
-    sys.path.insert(0, str(ROOT_DIR))
-
-from src.features import SklearnFeatureEngineer
 from src.utils import MODELS_DIR, load_pickle
 
-
-BEST_MODEL_PATH = MODELS_DIR / "best_model.pkl"
+MODEL_PATH = MODELS_DIR / "model_v1.pkl"
 
 
 class InferencePipeline:
-    """Input -> preparation -> trained pipeline -> prediction."""
 
-    def __init__(self, model_path: str | Path = BEST_MODEL_PATH) -> None:
-        self.model = load_pickle(model_path)
+    def __init__(self):
+        self.model = load_pickle(MODEL_PATH)
 
-    def _prepare_input(self, record: dict[str, Any] | pd.DataFrame) -> pd.DataFrame:
-        if isinstance(record, pd.DataFrame):
-            X = record.copy()
+    def _prepare_input(self, data):
+        if isinstance(data, dict):
+            X = pd.DataFrame([data])
         else:
-            X = pd.DataFrame([record])
+            X = data.copy()
 
         if "label" in X.columns:
             X = X.drop(columns=["label"])
 
         return X
 
-    def predict(self, record: dict[str, Any] | pd.DataFrame) -> dict[str, Any]:
-        X = self._prepare_input(record)
+    def predict(self, data):
+        X = self._prepare_input(data)
 
         pred = int(self.model.predict(X)[0])
 
@@ -46,29 +33,16 @@ class InferencePipeline:
         }
 
         if hasattr(self.model, "predict_proba"):
-            prob = float(self.model.predict_proba(X)[0, 1])
-            result["failure_probability"] = prob
+            prob = self.model.predict_proba(X)[0, 1]
+            prob = float(prob)
+
+            result["failure_probability"] = round(prob, 4)
+
+            # ✅ ADD THIS LINE HERE
+            result["confidence"] = (
+                "high" if prob > 0.7 else
+                "medium" if prob > 0.4 else
+                "low"
+            )
 
         return result
-
-
-if __name__ == "__main__":
-    example_input = {
-        "sensor_2": 641.82,
-        "sensor_3": 1589.7,
-        "sensor_4": 1400.6,
-        "sensor_7": 554.36,
-        "sensor_8": 2388.06,
-        "sensor_9": 9046.19,
-        "sensor_11": 47.47,
-        "sensor_12": 521.66,
-        "sensor_13": 2388.02,
-        "sensor_14": 8138.62,
-        "sensor_15": 8.4195,
-        "sensor_17": 391,
-        "sensor_20": 39.06,
-        "sensor_21": 23.419,
-    }
-
-    pipeline = InferencePipeline()
-    print(pipeline.predict(example_input))

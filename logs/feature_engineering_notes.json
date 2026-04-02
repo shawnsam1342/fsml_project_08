@@ -1,5 +1,5 @@
 {
-  "sensor_11_12_gap": "Difference between sensor_11 and sensor_12. This captures divergence between two related sensor responses; growing mismatch can indicate abnormal operating behavior.",
-  "sensor_20_21_ratio": "Ratio of sensor_20 to sensor_21. Relative change is often more informative than absolute values when engines operate under varying ranges.",
-  "sensor_15_squared": "Squared value of sensor_15 to amplify extreme readings. This helps the model respond more strongly to non-linear stress patterns."
+    "sensor_11_12_gap": "Difference between sensor_11 and sensor_12. This captures divergence between two related sensor responses; growing mismatch can indicate abnormal operating behavior.",
+    "sensor_20_21_ratio": "Ratio of sensor_20 to sensor_21. Relative change is often more informative than absolute values when engines operate under varying ranges.",
+    "sensor_15_squared": "Squared value of sensor_15 to amplify extreme readings. This helps the model respond more strongly to non-linear stress patterns."
 }

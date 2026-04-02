@@ -1,99 +1,36 @@
+
 Model: logistic_regression
---------------------------------------------------
-Validation metrics:
-  Accuracy: 0.9451
-  F1: 0.8324
-  Confusion matrix: [[2564, 141], [33, 432]]
-  Classification report:
-              precision    recall  f1-score   support
 
-           0       0.99      0.95      0.97      2705
-           1       0.75      0.93      0.83       465
+VALIDATION:
+Accuracy: 0.9451
+F1: 0.8324
+Confusion Matrix: [[2564, 141], [33, 432]]
 
-    accuracy                           0.95      3170
-   macro avg       0.87      0.94      0.90      3170
-weighted avg       0.95      0.95      0.95      3170
-
-
-Test metrics:
-  Accuracy: 0.9447
-  F1: 0.8311
-  Confusion matrix: [[2543, 137], [37, 428]]
-  Classification report:
-              precision    recall  f1-score   support
-
-           0       0.99      0.95      0.97      2680
-           1       0.76      0.92      0.83       465
-
-    accuracy                           0.94      3145
-   macro avg       0.87      0.93      0.90      3145
-weighted avg       0.95      0.94      0.95      3145
-
-
+TEST:
+Accuracy: 0.9447
+F1: 0.8311
+Confusion Matrix: [[2543, 137], [37, 428]]
 
 Model: random_forest
---------------------------------------------------
-Validation metrics:
-  Accuracy: 0.9606
-  F1: 0.8616
-  Confusion matrix: [[2656, 49], [76, 389]]
-  Classification report:
-              precision    recall  f1-score   support
 
-           0       0.97      0.98      0.98      2705
-           1       0.89      0.84      0.86       465
+VALIDATION:
+Accuracy: 0.9606
+F1: 0.8616
+Confusion Matrix: [[2656, 49], [76, 389]]
 
-    accuracy                           0.96      3170
-   macro avg       0.93      0.91      0.92      3170
-weighted avg       0.96      0.96      0.96      3170
+TEST:
+Accuracy: 0.9545
+F1: 0.8464
+Confusion Matrix: [[2608, 72], [71, 394]]
 
+Model: xgboost
 
-Test metrics:
-  Accuracy: 0.9545
-  F1: 0.8464
-  Confusion matrix: [[2608, 72], [71, 394]]
-  Classification report:
-              precision    recall  f1-score   support
+VALIDATION:
+Accuracy: 0.9546
+F1: 0.8326
+Confusion Matrix: [[2668, 37], [107, 358]]
 
-           0       0.97      0.97      0.97      2680
-           1       0.85      0.85      0.85       465
-
-    accuracy                           0.95      3145
-   macro avg       0.91      0.91      0.91      3145
-weighted avg       0.95      0.95      0.95      3145
-
-
-
-Model: gradient_boosting
---------------------------------------------------
-Validation metrics:
-  Accuracy: 0.9574
-  F1: 0.8457
-  Confusion matrix: [[2665, 40], [95, 370]]
-  Classification report:
-              precision    recall  f1-score   support
-
-           0       0.97      0.99      0.98      2705
-           1       0.90      0.80      0.85       465
-
-    accuracy                           0.96      3170
-   macro avg       0.93      0.89      0.91      3170
-weighted avg       0.96      0.96      0.96      3170
-
-
-Test metrics:
-  Accuracy: 0.9539
-  F1: 0.8405
-  Confusion matrix: [[2618, 62], [83, 382]]
-  Classification report:
-              precision    recall  f1-score   support
-
-           0       0.97      0.98      0.97      2680
-           1       0.86      0.82      0.84       465
-
-    accuracy                           0.95      3145
-   macro avg       0.91      0.90      0.91      3145
-weighted avg       0.95      0.95      0.95      3145
-
-
-
+TEST:
+Accuracy: 0.9555
+F1: 0.8451
+Confusion Matrix: [[2623, 57], [83, 382]]

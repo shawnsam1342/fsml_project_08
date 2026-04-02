@@ -1,41 +1,127 @@
-2026-04-01 12:24:11,982 - INFO - Training model: logistic_regression
-2026-04-01 12:24:12,191 - INFO - logistic_regression Validation F1: 0.8323699421965318
-2026-04-01 12:24:12,191 - INFO - logistic_regression Test F1: 0.8310679611650486
-2026-04-01 12:24:12,194 - INFO - Training model: random_forest
-2026-04-01 12:24:14,327 - INFO - random_forest Validation F1: 0.8615725359911407
-2026-04-01 12:24:14,327 - INFO - random_forest Test F1: 0.8464017185821697
-2026-04-01 12:24:14,327 - INFO - Training model: gradient_boosting
-2026-04-01 12:24:18,634 - INFO - gradient_boosting Validation F1: 0.8457142857142858
-2026-04-01 12:24:18,636 - INFO - gradient_boosting Test F1: 0.8404840484048405
-2026-04-01 12:24:18,696 - INFO - Best model selected: random_forest
-2026-04-01 12:24:37,284 - INFO - Training model: logistic_regression
-2026-04-01 12:24:37,396 - INFO - logistic_regression Validation F1: 0.8323699421965318
-2026-04-01 12:24:37,396 - INFO - logistic_regression Test F1: 0.8310679611650486
-2026-04-01 12:24:37,396 - INFO - Training model: random_forest
-2026-04-01 12:24:39,114 - INFO - random_forest Validation F1: 0.8615725359911407
-2026-04-01 12:24:39,114 - INFO - random_forest Test F1: 0.8464017185821697
-2026-04-01 12:24:39,114 - INFO - Training model: gradient_boosting
-2026-04-01 12:24:42,524 - INFO - gradient_boosting Validation F1: 0.8457142857142858
-2026-04-01 12:24:42,524 - INFO - gradient_boosting Test F1: 0.8404840484048405
-2026-04-01 12:24:42,561 - INFO - Best model selected: random_forest
-2026-04-01 12:33:24,313 - INFO - Training model: logistic_regression
-2026-04-01 12:33:48,072 - INFO - Training model: logistic_regression
-2026-04-01 12:33:48,211 - INFO - logistic_regression Validation F1: 0.8323699421965318
-2026-04-01 12:33:48,211 - INFO - logistic_regression Test F1: 0.8310679611650486
-2026-04-01 12:33:48,211 - INFO - Training model: random_forest
-2026-04-01 12:33:50,137 - INFO - random_forest Validation F1: 0.8615725359911407
-2026-04-01 12:33:50,137 - INFO - random_forest Test F1: 0.8464017185821697
-2026-04-01 12:33:50,138 - INFO - Training model: gradient_boosting
-2026-04-01 12:33:54,213 - INFO - gradient_boosting Validation F1: 0.8457142857142858
-2026-04-01 12:33:54,213 - INFO - gradient_boosting Test F1: 0.8404840484048405
-2026-04-01 12:33:54,271 - INFO - Best model selected: random_forest
-2026-04-01 12:34:15,476 - INFO - Training model: logistic_regression
-2026-04-01 12:34:15,577 - INFO - logistic_regression Validation F1: 0.8323699421965318
-2026-04-01 12:34:15,577 - INFO - logistic_regression Test F1: 0.8310679611650486
-2026-04-01 12:34:15,577 - INFO - Training model: random_forest
-2026-04-01 12:34:17,289 - INFO - random_forest Validation F1: 0.8615725359911407
-2026-04-01 12:34:17,289 - INFO - random_forest Test F1: 0.8464017185821697
-2026-04-01 12:34:17,289 - INFO - Training model: gradient_boosting
-2026-04-01 12:34:20,721 - INFO - gradient_boosting Validation F1: 0.8457142857142858
-2026-04-01 12:34:20,721 - INFO - gradient_boosting Test F1: 0.8404840484048405
-2026-04-01 12:34:20,755 - INFO - Best model selected: random_forest
+2026-04-02 15:24:38,952 - INFO - Training model: logistic_regression
+2026-04-02 15:24:39,109 - INFO - logistic_regression Validation F1: 0.8323699421965318
+2026-04-02 15:24:39,109 - INFO - logistic_regression Test F1: 0.8310679611650486
+2026-04-02 15:24:39,110 - INFO - Training model: random_forest
+2026-04-02 15:24:40,834 - INFO - random_forest Validation F1: 0.8615725359911407
+2026-04-02 15:24:40,834 - INFO - random_forest Test F1: 0.8464017185821697
+2026-04-02 15:24:40,834 - INFO - Training model: gradient_boosting
+2026-04-02 15:24:44,308 - INFO - gradient_boosting Validation F1: 0.8457142857142858
+2026-04-02 15:24:44,308 - INFO - gradient_boosting Test F1: 0.8404840484048405
+2026-04-02 15:27:34,327 - INFO - Training model: logistic_regression
+2026-04-02 15:27:34,473 - INFO - logistic_regression Validation F1: 0.8323699421965318
+2026-04-02 15:27:34,473 - INFO - logistic_regression Test F1: 0.8310679611650486
+2026-04-02 15:27:34,473 - INFO - Training model: random_forest
+2026-04-02 15:27:36,140 - INFO - random_forest Validation F1: 0.8615725359911407
+2026-04-02 15:27:36,140 - INFO - random_forest Test F1: 0.8464017185821697
+2026-04-02 15:27:36,141 - INFO - Training model: xgboost
+2026-04-02 15:27:36,686 - INFO - xgboost Validation F1: 0.8325581395348837
+2026-04-02 15:27:36,686 - INFO - xgboost Test F1: 0.8451327433628318
+2026-04-02 15:28:53,335 - INFO - Training model: logistic_regression
+2026-04-02 15:28:53,436 - INFO - logistic_regression Validation F1: 0.8323699421965318
+2026-04-02 15:28:53,436 - INFO - logistic_regression Test F1: 0.8310679611650486
+2026-04-02 15:28:53,436 - INFO - Training model: random_forest
+2026-04-02 15:28:54,837 - INFO - random_forest Validation F1: 0.8615725359911407
+2026-04-02 15:28:54,837 - INFO - random_forest Test F1: 0.8464017185821697
+2026-04-02 15:28:54,837 - INFO - Training model: xgboost
+2026-04-02 15:28:55,340 - INFO - xgboost Validation F1: 0.8325581395348837
+2026-04-02 15:28:55,340 - INFO - xgboost Test F1: 0.8451327433628318
+2026-04-02 15:28:55,395 - INFO - Best model selected: random_forest
+2026-04-02 15:29:53,295 - INFO - Training model: logistic_regression
+2026-04-02 15:29:53,380 - INFO - logistic_regression Validation F1: 0.8323699421965318
+2026-04-02 15:29:53,380 - INFO - logistic_regression Test F1: 0.8310679611650486
+2026-04-02 15:29:53,380 - INFO - Training model: random_forest
+2026-04-02 15:29:54,784 - INFO - random_forest Validation F1: 0.8615725359911407
+2026-04-02 15:29:54,784 - INFO - random_forest Test F1: 0.8464017185821697
+2026-04-02 15:29:54,784 - INFO - Training model: xgboost
+2026-04-02 15:29:55,307 - INFO - xgboost Validation F1: 0.8325581395348837
+2026-04-02 15:29:55,307 - INFO - xgboost Test F1: 0.8451327433628318
+2026-04-02 15:30:08,669 - INFO - Training model: logistic_regression
+2026-04-02 15:30:08,766 - INFO - logistic_regression Validation F1: 0.8323699421965318
+2026-04-02 15:30:08,766 - INFO - logistic_regression Test F1: 0.8310679611650486
+2026-04-02 15:30:08,767 - INFO - Training model: random_forest
+2026-04-02 15:30:10,225 - INFO - random_forest Validation F1: 0.8615725359911407
+2026-04-02 15:30:10,225 - INFO - random_forest Test F1: 0.8464017185821697
+2026-04-02 15:30:10,225 - INFO - Training model: xgboost
+2026-04-02 15:30:10,724 - INFO - xgboost Validation F1: 0.8325581395348837
+2026-04-02 15:30:10,724 - INFO - xgboost Test F1: 0.8451327433628318
+2026-04-02 15:30:10,783 - INFO - Best model selected: random_forest
+2026-04-02 15:31:09,140 - INFO - Training model: logistic_regression
+2026-04-02 15:31:09,231 - INFO - logistic_regression Validation F1: 0.8323699421965318
+2026-04-02 15:31:09,233 - INFO - logistic_regression Test F1: 0.8310679611650486
+2026-04-02 15:31:09,233 - INFO - logistic_regression Validation Accuracy: 0.9451104100946373
+2026-04-02 15:31:09,233 - INFO - logistic_regression Test Accuracy: 0.9446740858505565
+2026-04-02 15:31:09,233 - INFO - Training model: random_forest
+2026-04-02 15:31:10,796 - INFO - random_forest Validation F1: 0.8615725359911407
+2026-04-02 15:31:10,796 - INFO - random_forest Test F1: 0.8464017185821697
+2026-04-02 15:31:10,796 - INFO - random_forest Validation Accuracy: 0.9605678233438486
+2026-04-02 15:31:10,796 - INFO - random_forest Test Accuracy: 0.9545310015898251
+2026-04-02 15:31:10,796 - INFO - Training model: xgboost
+2026-04-02 15:31:11,295 - INFO - xgboost Validation F1: 0.8325581395348837
+2026-04-02 15:31:11,295 - INFO - xgboost Test F1: 0.8451327433628318
+2026-04-02 15:31:11,296 - INFO - xgboost Validation Accuracy: 0.9545741324921135
+2026-04-02 15:31:11,296 - INFO - xgboost Test Accuracy: 0.9554848966613673
+2026-04-02 15:31:24,484 - INFO - Training model: logistic_regression
+2026-04-02 15:31:24,615 - INFO - logistic_regression Validation F1: 0.8323699421965318
+2026-04-02 15:31:24,615 - INFO - logistic_regression Test F1: 0.8310679611650486
+2026-04-02 15:31:24,616 - INFO - logistic_regression Validation Accuracy: 0.9451104100946373
+2026-04-02 15:31:24,616 - INFO - logistic_regression Test Accuracy: 0.9446740858505565
+2026-04-02 15:31:24,616 - INFO - Training model: random_forest
+2026-04-02 15:31:26,161 - INFO - random_forest Validation F1: 0.8615725359911407
+2026-04-02 15:31:26,161 - INFO - random_forest Test F1: 0.8464017185821697
+2026-04-02 15:31:26,161 - INFO - random_forest Validation Accuracy: 0.9605678233438486
+2026-04-02 15:31:26,161 - INFO - random_forest Test Accuracy: 0.9545310015898251
+2026-04-02 15:31:26,161 - INFO - Training model: xgboost
+2026-04-02 15:31:26,651 - INFO - xgboost Validation F1: 0.8325581395348837
+2026-04-02 15:31:26,653 - INFO - xgboost Test F1: 0.8451327433628318
+2026-04-02 15:31:26,653 - INFO - xgboost Validation Accuracy: 0.9545741324921135
+2026-04-02 15:31:26,653 - INFO - xgboost Test Accuracy: 0.9554848966613673
+2026-04-02 15:31:26,709 - INFO - Best model selected: random_forest
+2026-04-02 15:35:10,906 - INFO - Received input: {'sensor_2': 0.1, 'sensor_3': 0.1, 'sensor_4': 0.1, 'sensor_7': 0.1, 'sensor_8': 0.1, 'sensor_9': 0.1, 'sensor_11': 0.1, 'sensor_12': 0.1, 'sensor_13': 0.1, 'sensor_14': 0.1, 'sensor_15': 0.1, 'sensor_17': 0.1, 'sensor_20': 0.1, 'sensor_21': 0.1}
+2026-04-02 15:35:11,017 - INFO - Prediction result: {'prediction': 0, 'prediction_label': 'healthy', 'failure_probability': 0.2407, 'confidence': 'low'}
+2026-04-02 15:36:53,878 - INFO - Received input: {'sensor_2': 641.82, 'sensor_3': 1589.7, 'sensor_4': 1400.6, 'sensor_7': 554.36, 'sensor_8': 2388.06, 'sensor_9': 9046.19, 'sensor_11': 47.47, 'sensor_12': 521.66, 'sensor_13': 2388.02, 'sensor_14': 8138.62, 'sensor_15': 8.4195, 'sensor_17': 391.0, 'sensor_20': 39.06, 'sensor_21': 23.419}
+2026-04-02 15:36:54,042 - INFO - Prediction result: {'prediction': 0, 'prediction_label': 'healthy', 'failure_probability': 0.0, 'confidence': 'low'}
+2026-04-02 15:41:13,536 - INFO - Training model: logistic_regression
+2026-04-02 15:41:13,645 - INFO - logistic_regression Validation Recall: 0.9290322580645162
+2026-04-02 15:41:13,645 - INFO - logistic_regression Validation F1: 0.8323699421965318
+2026-04-02 15:41:13,645 - INFO - logistic_regression Test Recall: 0.9204301075268817
+2026-04-02 15:41:13,645 - INFO - logistic_regression Test F1: 0.8310679611650486
+2026-04-02 15:41:13,645 - INFO - logistic_regression Validation Accuracy: 0.9451104100946373
+2026-04-02 15:41:13,645 - INFO - logistic_regression Test Accuracy: 0.9446740858505565
+2026-04-02 15:41:13,645 - INFO - Training model: random_forest
+2026-04-02 15:41:15,857 - INFO - random_forest Validation Recall: 0.8365591397849462
+2026-04-02 15:41:15,857 - INFO - random_forest Validation F1: 0.8615725359911407
+2026-04-02 15:41:15,857 - INFO - random_forest Test Recall: 0.8473118279569892
+2026-04-02 15:41:15,857 - INFO - random_forest Test F1: 0.8464017185821697
+2026-04-02 15:41:15,857 - INFO - random_forest Validation Accuracy: 0.9605678233438486
+2026-04-02 15:41:15,857 - INFO - random_forest Test Accuracy: 0.9545310015898251
+2026-04-02 15:41:15,857 - INFO - Training model: xgboost
+2026-04-02 15:41:16,518 - INFO - xgboost Validation Recall: 0.7698924731182796
+2026-04-02 15:41:16,518 - INFO - xgboost Validation F1: 0.8325581395348837
+2026-04-02 15:41:16,518 - INFO - xgboost Test Recall: 0.821505376344086
+2026-04-02 15:41:16,518 - INFO - xgboost Test F1: 0.8451327433628318
+2026-04-02 15:41:16,518 - INFO - xgboost Validation Accuracy: 0.9545741324921135
+2026-04-02 15:41:16,518 - INFO - xgboost Test Accuracy: 0.9554848966613673
+2026-04-02 15:41:50,394 - INFO - Training model: logistic_regression
+2026-04-02 15:41:50,490 - INFO - logistic_regression Validation Recall: 0.9290322580645162
+2026-04-02 15:41:50,490 - INFO - logistic_regression Validation F1: 0.8323699421965318
+2026-04-02 15:41:50,490 - INFO - logistic_regression Test Recall: 0.9204301075268817
+2026-04-02 15:41:50,490 - INFO - logistic_regression Test F1: 0.8310679611650486
+2026-04-02 15:41:50,490 - INFO - logistic_regression Validation Accuracy: 0.9451104100946373
+2026-04-02 15:41:50,498 - INFO - logistic_regression Test Accuracy: 0.9446740858505565
+2026-04-02 15:41:50,499 - INFO - Training model: random_forest
+2026-04-02 15:41:52,128 - INFO - random_forest Validation Recall: 0.8365591397849462
+2026-04-02 15:41:52,128 - INFO - random_forest Validation F1: 0.8615725359911407
+2026-04-02 15:41:52,128 - INFO - random_forest Test Recall: 0.8473118279569892
+2026-04-02 15:41:52,128 - INFO - random_forest Test F1: 0.8464017185821697
+2026-04-02 15:41:52,128 - INFO - random_forest Validation Accuracy: 0.9605678233438486
+2026-04-02 15:41:52,128 - INFO - random_forest Test Accuracy: 0.9545310015898251
+2026-04-02 15:41:52,142 - INFO - Training model: xgboost
+2026-04-02 15:41:52,718 - INFO - xgboost Validation Recall: 0.7698924731182796
+2026-04-02 15:41:52,718 - INFO - xgboost Validation F1: 0.8325581395348837
+2026-04-02 15:41:52,718 - INFO - xgboost Test Recall: 0.821505376344086
+2026-04-02 15:41:52,720 - INFO - xgboost Test F1: 0.8451327433628318
+2026-04-02 15:41:52,720 - INFO - xgboost Validation Accuracy: 0.9545741324921135
+2026-04-02 15:41:52,720 - INFO - xgboost Test Accuracy: 0.9554848966613673
+2026-04-02 15:41:52,732 - INFO - Best model selected: logistic_regression
+2026-04-02 15:45:36,748 - INFO - Received input: {'sensor_2': 600.0, 'sensor_3': 1500.0, 'sensor_4': 1300.0, 'sensor_7': 500.0, 'sensor_8': 2300.0, 'sensor_9': 8800.0, 'sensor_11': 60.0, 'sensor_12': 400.0, 'sensor_13': 2200.0, 'sensor_14': 7900.0, 'sensor_15': 12.0, 'sensor_17': 350.0, 'sensor_20': 50.0, 'sensor_21': 10.0}
+2026-04-02 15:45:36,794 - INFO - Prediction result: {'prediction': 0, 'prediction_label': 'healthy', 'failure_probability': 0.0, 'confidence': 'low'}
