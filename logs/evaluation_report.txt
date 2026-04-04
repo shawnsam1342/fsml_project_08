@@ -2,35 +2,35 @@
 Model: logistic_regression
 
 VALIDATION:
-Accuracy: 0.9451
+Precision: 0.7539
 F1: 0.8324
 Confusion Matrix: [[2564, 141], [33, 432]]
 
 TEST:
-Accuracy: 0.9447
+Precision: 0.7575
 F1: 0.8311
 Confusion Matrix: [[2543, 137], [37, 428]]
 
 Model: random_forest
 
 VALIDATION:
-Accuracy: 0.9606
+Precision: 0.8881
 F1: 0.8616
 Confusion Matrix: [[2656, 49], [76, 389]]
 
 TEST:
-Accuracy: 0.9545
+Precision: 0.8455
 F1: 0.8464
 Confusion Matrix: [[2608, 72], [71, 394]]
 
 Model: xgboost
 
 VALIDATION:
-Accuracy: 0.9546
+Precision: 0.9063
 F1: 0.8326
 Confusion Matrix: [[2668, 37], [107, 358]]
 
 TEST:
-Accuracy: 0.9555
+Precision: 0.8702
 F1: 0.8451
 Confusion Matrix: [[2623, 57], [83, 382]]

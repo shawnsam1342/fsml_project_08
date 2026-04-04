@@ -1,7 +1,7 @@
 {
     "logistic_regression": {
         "validation": {
-            "accuracy": 0.9451104100946373,
+            "precision": 0.7539267015706806,
             "f1": 0.8323699421965318,
             "recall": 0.9290322580645162,
             "confusion_matrix": [
@@ -17,7 +17,7 @@
             "classification_report": "              precision    recall  f1-score   support\n\n           0       0.99      0.95      0.97      2705\n           1       0.75      0.93      0.83       465\n\n    accuracy                           0.95      3170\n   macro avg       0.87      0.94      0.90      3170\nweighted avg       0.95      0.95      0.95      3170\n"
         },
         "test": {
-            "accuracy": 0.9446740858505565,
+            "precision": 0.7575221238938054,
             "f1": 0.8310679611650486,
             "recall": 0.9204301075268817,
             "confusion_matrix": [
@@ -35,7 +35,7 @@
     },
     "random_forest": {
         "validation": {
-            "accuracy": 0.9605678233438486,
+            "precision": 0.8881278538812786,
             "f1": 0.8615725359911407,
             "recall": 0.8365591397849462,
             "confusion_matrix": [
@@ -51,7 +51,7 @@
             "classification_report": "              precision    recall  f1-score   support\n\n           0       0.97      0.98      0.98      2705\n           1       0.89      0.84      0.86       465\n\n    accuracy                           0.96      3170\n   macro avg       0.93      0.91      0.92      3170\nweighted avg       0.96      0.96      0.96      3170\n"
         },
         "test": {
-            "accuracy": 0.9545310015898251,
+            "precision": 0.8454935622317596,
             "f1": 0.8464017185821697,
             "recall": 0.8473118279569892,
             "confusion_matrix": [
@@ -69,7 +69,7 @@
     },
     "xgboost": {
         "validation": {
-            "accuracy": 0.9545741324921135,
+            "precision": 0.9063291139240506,
             "f1": 0.8325581395348837,
             "recall": 0.7698924731182796,
             "confusion_matrix": [
@@ -85,7 +85,7 @@
             "classification_report": "              precision    recall  f1-score   support\n\n           0       0.96      0.99      0.97      2705\n           1       0.91      0.77      0.83       465\n\n    accuracy                           0.95      3170\n   macro avg       0.93      0.88      0.90      3170\nweighted avg       0.95      0.95      0.95      3170\n"
         },
         "test": {
-            "accuracy": 0.9554848966613673,
+            "precision": 0.8701594533029613,
             "f1": 0.8451327433628318,
             "recall": 0.821505376344086,
             "confusion_matrix": [

@@ -125,3 +125,24 @@
 2026-04-02 15:41:52,732 - INFO - Best model selected: logistic_regression
 2026-04-02 15:45:36,748 - INFO - Received input: {'sensor_2': 600.0, 'sensor_3': 1500.0, 'sensor_4': 1300.0, 'sensor_7': 500.0, 'sensor_8': 2300.0, 'sensor_9': 8800.0, 'sensor_11': 60.0, 'sensor_12': 400.0, 'sensor_13': 2200.0, 'sensor_14': 7900.0, 'sensor_15': 12.0, 'sensor_17': 350.0, 'sensor_20': 50.0, 'sensor_21': 10.0}
 2026-04-02 15:45:36,794 - INFO - Prediction result: {'prediction': 0, 'prediction_label': 'healthy', 'failure_probability': 0.0, 'confidence': 'low'}
+2026-04-04 15:55:42,287 - INFO - Training model: logistic_regression
+2026-04-04 15:55:42,413 - INFO - logistic_regression Validation Recall: 0.9290322580645162
+2026-04-04 15:55:42,414 - INFO - logistic_regression Validation F1: 0.8323699421965318
+2026-04-04 15:55:42,414 - INFO - logistic_regression Test Recall: 0.9204301075268817
+2026-04-04 15:55:42,414 - INFO - logistic_regression Test F1: 0.8310679611650486
+2026-04-04 15:55:42,414 - INFO - logistic_regression Validation Precision: 0.7539267015706806
+2026-04-04 15:55:42,414 - INFO - logistic_regression Test Precision: 0.7575221238938054
+2026-04-04 15:55:42,415 - INFO - Training model: random_forest
+2026-04-04 15:55:44,021 - INFO - random_forest Validation Recall: 0.8365591397849462
+2026-04-04 15:55:44,021 - INFO - random_forest Validation F1: 0.8615725359911407
+2026-04-04 15:55:44,021 - INFO - random_forest Test Recall: 0.8473118279569892
+2026-04-04 15:55:44,021 - INFO - random_forest Test F1: 0.8464017185821697
+2026-04-04 15:55:44,021 - INFO - random_forest Validation Precision: 0.8881278538812786
+2026-04-04 15:55:44,021 - INFO - random_forest Test Precision: 0.8454935622317596
+2026-04-04 15:55:44,024 - INFO - Training model: xgboost
+2026-04-04 15:55:44,688 - INFO - xgboost Validation Recall: 0.7698924731182796
+2026-04-04 15:55:44,688 - INFO - xgboost Validation F1: 0.8325581395348837
+2026-04-04 15:55:44,688 - INFO - xgboost Test Recall: 0.821505376344086
+2026-04-04 15:55:44,688 - INFO - xgboost Test F1: 0.8451327433628318
+2026-04-04 15:55:44,688 - INFO - xgboost Validation Precision: 0.9063291139240506
+2026-04-04 15:55:44,689 - INFO - xgboost Test Precision: 0.8701594533029613

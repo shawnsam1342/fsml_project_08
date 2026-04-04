@@ -4,12 +4,9 @@ import sys
 from pathlib import Path
 from typing import Any
 import pandas as pd
-from sklearn.compose import ColumnTransformer
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.impute import SimpleImputer
 from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import OneHotEncoder, StandardScaler
 from xgboost import XGBClassifier
 
 CURRENT_DIR = Path(__file__).resolve().parent
@@ -20,6 +17,7 @@ if str(ROOT_DIR) not in sys.path:
 from src.data_loader import load_processed_splits, split_features_target
 from src.evaluate import evaluate_classifier, save_evaluation_report
 from src.features import SklearnFeatureEngineer
+from src.preprocess import build_preprocessor
 from src.utils import logger, MODELS_DIR, LOGS_DIR, save_json, save_pickle
 
 
@@ -27,29 +25,6 @@ BEST_MODEL_PATH = MODELS_DIR / "model_v1.pkl"
 METRICS_PATH = LOGS_DIR / "model_metrics.json"
 REPORT_PATH = LOGS_DIR / "evaluation_report.txt"
 FEATURE_NOTE_PATH = LOGS_DIR / "feature_engineering_notes.json"
-
-
-def build_preprocessor(X: pd.DataFrame) -> ColumnTransformer:
-    numeric_features = X.select_dtypes(include=["number"]).columns.tolist()
-    categorical_features = [col for col in X.columns if col not in numeric_features]
-
-    numeric_transformer = Pipeline([
-        ("imputer", SimpleImputer(strategy="median")),   # missing value handling
-        ("scaler", StandardScaler()),                    # scaling
-    ])
-
-    categorical_transformer = Pipeline([
-        ("imputer", SimpleImputer(strategy="most_frequent")),
-        ("onehot", OneHotEncoder(handle_unknown="ignore")),  # encoding
-    ])
-
-    return ColumnTransformer(
-        transformers=[
-            ("num", numeric_transformer, numeric_features),
-            ("cat", categorical_transformer, categorical_features),
-        ],
-        remainder="drop",
-    )
 
 
 def build_models(X_train: pd.DataFrame) -> dict[str, Pipeline]:
@@ -138,8 +113,8 @@ def train_and_select_best_model() -> tuple[str, Pipeline, dict[str, Any]]:
         logger.info(f"{name} Validation F1: {val_metrics['f1']}")
         logger.info(f"{name} Test Recall: {test_metrics['recall']}")
         logger.info(f"{name} Test F1: {test_metrics['f1']}")
-        logger.info(f"{name} Validation Accuracy: {val_metrics['accuracy']}")
-        logger.info(f"{name} Test Accuracy: {test_metrics['accuracy']}")
+        logger.info(f"{name} Validation Precision: {val_metrics['precision']}")
+        logger.info(f"{name} Test Precision: {test_metrics['precision']}")
 
         all_results[name] = {
             "validation": val_metrics,
@@ -148,14 +123,12 @@ def train_and_select_best_model() -> tuple[str, Pipeline, dict[str, Any]]:
 
         print(f"Validation Recall: {val_metrics['recall']:.4f}")
         print(f"Validation F1-score: {val_metrics['f1']:.4f}")
-        print(f"Validation Accuracy: {val_metrics['accuracy']:.4f}")
+        print(f"Validation Precision: {val_metrics['precision']:.4f}")
         print(f"Test Recall: {test_metrics['recall']:.4f}")
         print(f"Test F1-score: {test_metrics['f1']:.4f}")
-        print(f"Test Accuracy: {test_metrics['accuracy']:.4f}")
+        print(f"Test Precision: {test_metrics['precision']:.4f}")
 
-        if (val_metrics["recall"] > best_val_recall) or (
-            val_metrics["recall"] == best_val_recall and val_metrics["f1"] > best_val_f1
-        ):
+        if val_metrics["f1"] > best_val_f1:
             best_val_recall = val_metrics["recall"]
             best_val_f1 = val_metrics["f1"]
             best_name = name
@@ -178,8 +151,7 @@ if __name__ == "__main__":
     logger.info(f"Best model selected: {best_name}")
     print(f"Validation Recall: {results[best_name]['validation']['recall']:.4f}")
     print(f"Validation F1: {results[best_name]['validation']['f1']:.4f}")
-    print(f"Validation Accuracy: {results[best_name]['validation']['accuracy']:.4f}")
     print(f"Test Recall: {results[best_name]['test']['recall']:.4f}")
     print(f"Test F1: {results[best_name]['test']['f1']:.4f}")
-    print(f"Test Accuracy: {results[best_name]['test']['accuracy']:.4f}")
+    print(f"Test Precision: {results[best_name]['test']['precision']:.4f}")
     print(f"Saved best model to: {BEST_MODEL_PATH}")

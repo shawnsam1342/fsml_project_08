@@ -1,6 +1,10 @@
 import os
 import numpy as np
 import pandas as pd
+from sklearn.compose import ColumnTransformer
+from sklearn.impute import SimpleImputer
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import OneHotEncoder, StandardScaler
 
 
 # Get base directory of project
@@ -66,6 +70,29 @@ def clean_dataset(df, useful_cols):
     df = df.drop(columns=['engine_id', 'cycle', 'max_cycle', 'RUL'], errors='ignore')
     df = df.loc[:, ~df.columns.duplicated()]
     return df
+
+
+def build_preprocessor(X: pd.DataFrame) -> ColumnTransformer:
+    numeric_features = X.select_dtypes(include=["number"]).columns.tolist()
+    categorical_features = [col for col in X.columns if col not in numeric_features]
+
+    numeric_transformer = Pipeline([
+        ("imputer", SimpleImputer(strategy="median")),
+        ("scaler", StandardScaler()),
+    ])
+
+    categorical_transformer = Pipeline([
+        ("imputer", SimpleImputer(strategy="most_frequent")),
+        ("onehot", OneHotEncoder(handle_unknown="ignore")),
+    ])
+
+    return ColumnTransformer(
+        transformers=[
+            ("num", numeric_transformer, numeric_features),
+            ("cat", categorical_transformer, categorical_features),
+        ],
+        remainder="drop",
+    )
 
 
 def preprocess_pipeline(path):

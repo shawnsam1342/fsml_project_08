@@ -9,10 +9,10 @@ def evaluate_classifier(model, X, y, threshold=0.5):
     else:
         y_pred = model.predict(X)
 
-    from sklearn.metrics import accuracy_score, f1_score, recall_score, confusion_matrix, classification_report
+    from sklearn.metrics import precision_score, f1_score, recall_score, confusion_matrix, classification_report
 
     return {
-        "accuracy": float(accuracy_score(y, y_pred)),
+        "precision": float(precision_score(y, y_pred, zero_division=0)),
         "f1": float(f1_score(y, y_pred, zero_division=0)),
         "recall": float(recall_score(y, y_pred, zero_division=0)),
         "confusion_matrix": confusion_matrix(y, y_pred).tolist(),
@@ -28,6 +28,6 @@ def save_evaluation_report(all_results: dict, report_path: str | Path):
             f.write(f"\nModel: {model_name}\n")
             for split, metrics in split_results.items():
                 f.write(f"\n{split.upper()}:\n")
-                f.write(f"Accuracy: {metrics['accuracy']:.4f}\n")
+                f.write(f"Precision: {metrics['precision']:.4f}\n")
                 f.write(f"F1: {metrics['f1']:.4f}\n")
                 f.write(f"Confusion Matrix: {metrics['confusion_matrix']}\n")

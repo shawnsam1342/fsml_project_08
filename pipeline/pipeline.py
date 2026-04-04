@@ -13,6 +13,7 @@ def run_pipeline():
 
     print(f"\nBest model: {best_name}")
     print(f"Validation F1: {results[best_name]['validation']['f1']:.4f}")
+    print(f"Test F1: {results[best_name]['test']['f1']:.4f}")
 
 
 if __name__ == "__main__":
