@@ -32,11 +32,16 @@ def run_pipeline():
     save_processed_data(train_df, val_df, test_df)
 
     print("Step 2: Training...")
-    best_name, _, results = train_and_select_best_model()
+    best_name, _, results, rul_results = train_and_select_best_model()
 
     print(f"\nBest model: {best_name}")
     print(f"Validation F1: {results[best_name]['validation']['f1']:.4f}")
     print(f"Test F1: {results[best_name]['test']['f1']:.4f}")
+
+    print("\nRUL Model Performance:")
+    print(f"Validation MAE: {rul_results['val_mae']:.4f}")
+    print(f"Test MAE: {rul_results['test_mae']:.4f}")
+    print(f"Test RMSE: {rul_results['test_rmse']:.4f}")
 
 
 if __name__ == "__main__":

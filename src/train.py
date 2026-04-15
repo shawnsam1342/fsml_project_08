@@ -160,7 +160,11 @@ def train_and_select_best_model() -> tuple[str, Pipeline, dict[str, Any]]:
     save_json(get_feature_documentation(), FEATURE_NOTE_PATH)
     save_evaluation_report(all_results, REPORT_PATH)
 
-    return best_name, best_model, all_results
+    #Train RUL model inside main pipeline
+    print("\n--- Training RUL Model ---")
+    rul_model, rul_results = train_rul_model()
+
+    return best_name, best_model, all_results, rul_results
 
 def train_rul_model():
     train_df, val_df, test_df = load_processed_splits()
@@ -219,14 +223,17 @@ def train_rul_model():
 
     save_pickle(best_model, RUL_MODEL_PATH)
 
-    return best_model
+    #RETURN METRICS
+    rul_results = {
+        "val_mae": float(best_mae),
+        "test_mae": float(test_mae),
+        "test_rmse": float(rmse),
+    }
 
+    return best_model, rul_results
 
 if __name__ == "__main__":
-    best_name, _, results = train_and_select_best_model()
-
-    print("\n--- Training RUL Model ---")
-    train_rul_model()
+    best_name, _, results, rul_results = train_and_select_best_model()
 
     print(f"\nBest model: {best_name}")
     print(f"Validation Recall: {results[best_name]['validation']['recall']:.4f}")
@@ -235,3 +242,7 @@ if __name__ == "__main__":
     print(f"Test F1: {results[best_name]['test']['f1']:.4f}")
     print(f"Test Precision: {results[best_name]['test']['precision']:.4f}")
     print(f"Saved best model to: {BEST_MODEL_PATH}")
+    print("\nRUL Model Performance:")
+    print(f"Validation MAE: {rul_results['val_mae']:.4f}")
+    print(f"Test MAE: {rul_results['test_mae']:.4f}")
+    print(f"Test RMSE: {rul_results['test_rmse']:.4f}")
